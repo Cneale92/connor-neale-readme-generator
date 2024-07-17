@@ -14,8 +14,16 @@ const questions = [
   `What does the user need to know about contributing to the repo?`,
 ];
 
+// Adds current year to the chosen licensing
+let currentDate = new Date();
+let currentYear = currentDate.getFullYear();
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (error) => {
+    error ? console.log(error) : console.log("Project README file created.");
+  });
+};
 
 // TODO: Create a function to initialize app
 function init() {}
